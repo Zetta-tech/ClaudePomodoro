@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autofocus - Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Floating background objects -->
+    <div class="floating-objects">
+        <div class="float-circle float-1"></div>
+        <div class="float-circle float-2"></div>
+        <div class="float-circle float-3"></div>
+        <div class="float-rectangle float-4"></div>
+        <div class="float-rectangle float-5"></div>
+        <div class="float-triangle float-6"></div>
+        <div class="float-triangle float-7"></div>
+        <div class="float-circle float-8"></div>
+        <div class="float-rectangle float-9"></div>
+        <div class="float-circle float-10"></div>
+    </div>
+
+    <!-- Main content container -->
+    <div class="container">
+        <!-- Main title with animation -->
+        <h1 class="main-title">Autofocus</h1>
+        <p class="subtitle">Master your time, one focus session at a time</p>
+
+        <!-- Pomodoro timer card -->
+        <div class="timer-card">
+            <div class="mode-indicator">
+                <span class="mode-text">Focus Time</span>
+            </div>
+
+            <div class="timer-display">
+                <span class="time-value" id="timerDisplay">25:00</span>
+            </div>
+
+            <div class="progress-ring">
+                <svg class="progress-svg" width="280" height="280">
+                    <circle class="progress-bg" cx="140" cy="140" r="130"></circle>
+                    <circle class="progress-bar" cx="140" cy="140" r="130" id="progressCircle"></circle>
+                </svg>
+            </div>
+
+            <div class="timer-controls">
+                <button class="btn btn-primary" id="startBtn">
+                    <span class="btn-icon">▶</span>
+                    <span class="btn-text">Start</span>
+                </button>
+                <button class="btn btn-secondary" id="pauseBtn" disabled>
+                    <span class="btn-icon">⏸</span>
+                    <span class="btn-text">Pause</span>
+                </button>
+                <button class="btn btn-secondary" id="resetBtn">
+                    <span class="btn-icon">↻</span>
+                    <span class="btn-text">Reset</span>
+                </button>
+            </div>
+
+            <div class="session-info">
+                <div class="info-item">
+                    <span class="info-label">Session</span>
+                    <span class="info-value" id="sessionCount">1</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Completed</span>
+                    <span class="info-value" id="completedCount">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings panel -->
+        <div class="settings-panel">
+            <h3 class="settings-title">Timer Settings</h3>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label for="focusTime">Focus (min)</label>
+                    <input type="number" id="focusTime" value="25" min="1" max="60">
+                </div>
+                <div class="setting-item">
+                    <label for="shortBreak">Short Break (min)</label>
+                    <input type="number" id="shortBreak" value="5" min="1" max="30">
+                </div>
+                <div class="setting-item">
+                    <label for="longBreak">Long Break (min)</label>
+                    <input type="number" id="longBreak" value="15" min="1" max="60">
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Built with focus and flow ✨</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
