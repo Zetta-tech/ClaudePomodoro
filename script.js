@@ -369,9 +369,65 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Initialize the timer when DOM is loaded
+// Theme Management System
+class ThemeManager {
+    constructor() {
+        this.themeToggle = document.getElementById('themeToggle');
+        this.currentTheme = localStorage.getItem('theme') || 'light';
+        this.init();
+    }
+
+    init() {
+        // Apply saved theme
+        this.applyTheme(this.currentTheme);
+
+        // Theme toggle event listener
+        this.themeToggle.addEventListener('click', () => this.toggleTheme());
+    }
+
+    toggleTheme() {
+        this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+        this.applyTheme(this.currentTheme);
+
+        // Add rotation animation to toggle button
+        this.themeToggle.style.transform = 'rotate(360deg) scale(1.2)';
+        setTimeout(() => {
+            this.themeToggle.style.transform = '';
+        }, 500);
+    }
+
+    applyTheme(theme) {
+        if (theme === 'dark') {
+            document.body.classList.add('dark-theme');
+        } else {
+            document.body.classList.remove('dark-theme');
+        }
+
+        // Save theme preference
+        localStorage.setItem('theme', theme);
+        this.currentTheme = theme;
+    }
+
+    // Method to add custom themes in the future
+    addCustomTheme(themeName, themeVariables) {
+        const style = document.createElement('style');
+        const cssVariables = Object.entries(themeVariables)
+            .map(([key, value]) => `--${key}: ${value};`)
+            .join('\n');
+
+        style.textContent = `
+            body.${themeName}-theme {
+                ${cssVariables}
+            }
+        `;
+        document.head.appendChild(style);
+    }
+}
+
+// Initialize the timer and theme when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new PomodoroTimer();
+    new ThemeManager();
 });
 
 // Add mouse interaction effects to floating objects
