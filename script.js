@@ -29,9 +29,9 @@ class PomodoroTimer {
         this.modeText = document.querySelector('.mode-text');
 
         // Settings inputs
-        this.focusTimeInput = document.getElementById('focusTime');
-        this.shortBreakInput = document.getElementById('shortBreak');
-        this.longBreakInput = document.getElementById('longBreak');
+        this.focusTimeInput = document.getElementById('focusTimeSetting');
+        this.shortBreakInput = document.getElementById('shortBreakSetting');
+        this.longBreakInput = document.getElementById('longBreakSetting');
 
         // Initialize
         this.init();
@@ -369,10 +369,47 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// Settings Sidebar Management
+class SettingsSidebar {
+    constructor() {
+        this.settingsBtn = document.getElementById('settingsBtn');
+        this.settingsSidebar = document.getElementById('settingsSidebar');
+        this.settingsOverlay = document.getElementById('settingsOverlay');
+        this.closeBtn = document.getElementById('closeSettingsBtn');
+        this.init();
+    }
+
+    init() {
+        // Event listeners
+        this.settingsBtn.addEventListener('click', () => this.open());
+        this.closeBtn.addEventListener('click', () => this.close());
+        this.settingsOverlay.addEventListener('click', () => this.close());
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.settingsSidebar.classList.contains('active')) {
+                this.close();
+            }
+        });
+    }
+
+    open() {
+        this.settingsSidebar.classList.add('active');
+        this.settingsOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    close() {
+        this.settingsSidebar.classList.remove('active');
+        this.settingsOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
 // Theme Management System
 class ThemeManager {
     constructor() {
-        this.themeSelector = document.getElementById('themeSelector');
+        this.themeButtons = document.querySelectorAll('.theme-option');
         this.currentTheme = localStorage.getItem('theme') || 'light';
         this.init();
     }
@@ -381,18 +418,22 @@ class ThemeManager {
         // Apply saved theme
         this.applyTheme(this.currentTheme);
 
-        // Set the selector to the saved theme
-        this.themeSelector.value = this.currentTheme;
+        // Set active button for the saved theme
+        this.updateActiveButton();
 
-        // Theme selector event listener
-        this.themeSelector.addEventListener('change', (e) => {
-            this.applyTheme(e.target.value);
+        // Theme button event listeners
+        this.themeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const theme = button.dataset.theme;
+                this.applyTheme(theme);
+                this.updateActiveButton();
 
-            // Add scale animation to selector
-            this.themeSelector.style.transform = 'scale(1.1)';
-            setTimeout(() => {
-                this.themeSelector.style.transform = '';
-            }, 300);
+                // Add animation to button
+                button.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    button.style.transform = '';
+                }, 300);
+            });
         });
     }
 
@@ -410,6 +451,19 @@ class ThemeManager {
         this.currentTheme = theme;
     }
 
+    updateActiveButton() {
+        // Remove active class from all buttons
+        this.themeButtons.forEach(btn => btn.classList.remove('active'));
+
+        // Add active class to current theme button
+        const activeButton = Array.from(this.themeButtons).find(
+            btn => btn.dataset.theme === this.currentTheme
+        );
+        if (activeButton) {
+            activeButton.classList.add('active');
+        }
+    }
+
     // Method to add custom themes in the future
     addCustomTheme(themeName, themeVariables) {
         const style = document.createElement('style');
@@ -423,24 +477,13 @@ class ThemeManager {
             }
         `;
         document.head.appendChild(style);
-
-        // Add option to selector if it doesn't exist
-        const optionExists = Array.from(this.themeSelector.options).some(
-            option => option.value === themeName
-        );
-
-        if (!optionExists) {
-            const option = document.createElement('option');
-            option.value = themeName;
-            option.textContent = themeName.charAt(0).toUpperCase() + themeName.slice(1);
-            this.themeSelector.appendChild(option);
-        }
     }
 }
 
-// Initialize the timer and theme when DOM is loaded
+// Initialize all components when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new PomodoroTimer();
+    new SettingsSidebar();
     new ThemeManager();
 });
 
