@@ -372,7 +372,7 @@ document.head.appendChild(style);
 // Theme Management System
 class ThemeManager {
     constructor() {
-        this.themeToggle = document.getElementById('themeToggle');
+        this.themeSelector = document.getElementById('themeSelector');
         this.currentTheme = localStorage.getItem('theme') || 'light';
         this.init();
     }
@@ -381,26 +381,28 @@ class ThemeManager {
         // Apply saved theme
         this.applyTheme(this.currentTheme);
 
-        // Theme toggle event listener
-        this.themeToggle.addEventListener('click', () => this.toggleTheme());
-    }
+        // Set the selector to the saved theme
+        this.themeSelector.value = this.currentTheme;
 
-    toggleTheme() {
-        this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
-        this.applyTheme(this.currentTheme);
+        // Theme selector event listener
+        this.themeSelector.addEventListener('change', (e) => {
+            this.applyTheme(e.target.value);
 
-        // Add rotation animation to toggle button
-        this.themeToggle.style.transform = 'rotate(360deg) scale(1.2)';
-        setTimeout(() => {
-            this.themeToggle.style.transform = '';
-        }, 500);
+            // Add scale animation to selector
+            this.themeSelector.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                this.themeSelector.style.transform = '';
+            }, 300);
+        });
     }
 
     applyTheme(theme) {
-        if (theme === 'dark') {
-            document.body.classList.add('dark-theme');
-        } else {
-            document.body.classList.remove('dark-theme');
+        // Remove all theme classes
+        document.body.className = '';
+
+        // Apply new theme class (except for light theme which is default)
+        if (theme !== 'light') {
+            document.body.classList.add(`${theme}-theme`);
         }
 
         // Save theme preference
@@ -421,6 +423,18 @@ class ThemeManager {
             }
         `;
         document.head.appendChild(style);
+
+        // Add option to selector if it doesn't exist
+        const optionExists = Array.from(this.themeSelector.options).some(
+            option => option.value === themeName
+        );
+
+        if (!optionExists) {
+            const option = document.createElement('option');
+            option.value = themeName;
+            option.textContent = themeName.charAt(0).toUpperCase() + themeName.slice(1);
+            this.themeSelector.appendChild(option);
+        }
     }
 }
 
