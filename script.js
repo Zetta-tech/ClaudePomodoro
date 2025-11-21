@@ -369,9 +369,79 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Initialize the timer when DOM is loaded
+// Theme Management System
+class ThemeManager {
+    constructor() {
+        this.themeSelector = document.getElementById('themeSelector');
+        this.currentTheme = localStorage.getItem('theme') || 'light';
+        this.init();
+    }
+
+    init() {
+        // Apply saved theme
+        this.applyTheme(this.currentTheme);
+
+        // Set the selector to the saved theme
+        this.themeSelector.value = this.currentTheme;
+
+        // Theme selector event listener
+        this.themeSelector.addEventListener('change', (e) => {
+            this.applyTheme(e.target.value);
+
+            // Add scale animation to selector
+            this.themeSelector.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                this.themeSelector.style.transform = '';
+            }, 300);
+        });
+    }
+
+    applyTheme(theme) {
+        // Remove all theme classes
+        document.body.className = '';
+
+        // Apply new theme class (except for light theme which is default)
+        if (theme !== 'light') {
+            document.body.classList.add(`${theme}-theme`);
+        }
+
+        // Save theme preference
+        localStorage.setItem('theme', theme);
+        this.currentTheme = theme;
+    }
+
+    // Method to add custom themes in the future
+    addCustomTheme(themeName, themeVariables) {
+        const style = document.createElement('style');
+        const cssVariables = Object.entries(themeVariables)
+            .map(([key, value]) => `--${key}: ${value};`)
+            .join('\n');
+
+        style.textContent = `
+            body.${themeName}-theme {
+                ${cssVariables}
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add option to selector if it doesn't exist
+        const optionExists = Array.from(this.themeSelector.options).some(
+            option => option.value === themeName
+        );
+
+        if (!optionExists) {
+            const option = document.createElement('option');
+            option.value = themeName;
+            option.textContent = themeName.charAt(0).toUpperCase() + themeName.slice(1);
+            this.themeSelector.appendChild(option);
+        }
+    }
+}
+
+// Initialize the timer and theme when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new PomodoroTimer();
+    new ThemeManager();
 });
 
 // Add mouse interaction effects to floating objects

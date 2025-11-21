@@ -1,4 +1,253 @@
-/* Reset and base styles */
+/* ===== THEME SYSTEM WITH CSS VARIABLES ===== */
+:root {
+    /* Light Theme (Glassy) */
+    --bg-gradient-start: #667eea;
+    --bg-gradient-end: #764ba2;
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --glass-shadow: rgba(31, 38, 135, 0.37);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.9);
+    --card-bg: rgba(255, 255, 255, 0.12);
+    --card-border: rgba(255, 255, 255, 0.18);
+    --accent-primary: #667eea;
+    --accent-secondary: #764ba2;
+    --timer-text: #667eea;
+    --timer-bg: rgba(255, 255, 255, 0.95);
+    --mode-badge-bg: rgba(102, 126, 234, 0.15);
+    --mode-badge-text: #667eea;
+    --info-label: rgba(102, 126, 234, 0.7);
+    --info-value: #667eea;
+    --input-bg: rgba(255, 255, 255, 0.9);
+    --input-border: rgba(102, 126, 234, 0.3);
+    --input-text: #333;
+    --float-object: rgba(255, 255, 255, 0.12);
+    --float-triangle: rgba(255, 255, 255, 0.1);
+    --progress-bg: rgba(102, 126, 234, 0.15);
+    --progress-bar: #667eea;
+    --btn-primary-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --btn-secondary-bg: rgba(102, 126, 234, 0.2);
+    --btn-secondary-text: #667eea;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    --bg-gradient-start: #1a1a2e;
+    --bg-gradient-end: #16213e;
+    --glass-bg: rgba(30, 30, 46, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: rgba(0, 0, 0, 0.5);
+    --text-primary: #e0e0e0;
+    --text-secondary: rgba(224, 224, 224, 0.8);
+    --card-bg: rgba(30, 30, 46, 0.3);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --accent-primary: #818cf8;
+    --accent-secondary: #a78bfa;
+    --timer-text: #818cf8;
+    --timer-bg: rgba(30, 30, 46, 0.85);
+    --mode-badge-bg: rgba(129, 140, 248, 0.15);
+    --mode-badge-text: #a5b4fc;
+    --info-label: rgba(165, 180, 252, 0.6);
+    --info-value: #a5b4fc;
+    --input-bg: rgba(30, 30, 46, 0.6);
+    --input-border: rgba(129, 140, 248, 0.3);
+    --input-text: #e0e0e0;
+    --float-object: rgba(129, 140, 248, 0.08);
+    --float-triangle: rgba(129, 140, 248, 0.06);
+    --progress-bg: rgba(129, 140, 248, 0.15);
+    --progress-bar: #818cf8;
+    --btn-primary-bg: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+    --btn-secondary-bg: rgba(129, 140, 248, 0.2);
+    --btn-secondary-text: #a5b4fc;
+}
+
+/* Ocean Theme */
+body.ocean-theme {
+    --bg-gradient-start: #0077be;
+    --bg-gradient-end: #00a8e8;
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --glass-shadow: rgba(0, 119, 190, 0.37);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.9);
+    --card-bg: rgba(255, 255, 255, 0.12);
+    --card-border: rgba(255, 255, 255, 0.18);
+    --accent-primary: #00d4ff;
+    --accent-secondary: #0096d6;
+    --timer-text: #00d4ff;
+    --timer-bg: rgba(255, 255, 255, 0.95);
+    --mode-badge-bg: rgba(0, 212, 255, 0.15);
+    --mode-badge-text: #00d4ff;
+    --info-label: rgba(0, 212, 255, 0.7);
+    --info-value: #00d4ff;
+    --input-bg: rgba(255, 255, 255, 0.9);
+    --input-border: rgba(0, 212, 255, 0.3);
+    --input-text: #333;
+    --float-object: rgba(255, 255, 255, 0.12);
+    --float-triangle: rgba(255, 255, 255, 0.1);
+    --progress-bg: rgba(0, 212, 255, 0.15);
+    --progress-bar: #00d4ff;
+    --btn-primary-bg: linear-gradient(135deg, #0077be 0%, #00a8e8 100%);
+    --btn-secondary-bg: rgba(0, 212, 255, 0.2);
+    --btn-secondary-text: #00d4ff;
+}
+
+/* Forest Theme */
+body.forest-theme {
+    --bg-gradient-start: #2d5016;
+    --bg-gradient-end: #4a7c2c;
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --glass-shadow: rgba(45, 80, 22, 0.37);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.9);
+    --card-bg: rgba(255, 255, 255, 0.12);
+    --card-border: rgba(255, 255, 255, 0.18);
+    --accent-primary: #7cb342;
+    --accent-secondary: #558b2f;
+    --timer-text: #8bc34a;
+    --timer-bg: rgba(255, 255, 255, 0.95);
+    --mode-badge-bg: rgba(139, 195, 74, 0.15);
+    --mode-badge-text: #8bc34a;
+    --info-label: rgba(139, 195, 74, 0.7);
+    --info-value: #8bc34a;
+    --input-bg: rgba(255, 255, 255, 0.9);
+    --input-border: rgba(139, 195, 74, 0.3);
+    --input-text: #333;
+    --float-object: rgba(255, 255, 255, 0.12);
+    --float-triangle: rgba(255, 255, 255, 0.1);
+    --progress-bg: rgba(139, 195, 74, 0.15);
+    --progress-bar: #8bc34a;
+    --btn-primary-bg: linear-gradient(135deg, #7cb342 0%, #558b2f 100%);
+    --btn-secondary-bg: rgba(139, 195, 74, 0.2);
+    --btn-secondary-text: #8bc34a;
+}
+
+/* Sunset Theme */
+body.sunset-theme {
+    --bg-gradient-start: #ff6b6b;
+    --bg-gradient-end: #ffa500;
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --glass-shadow: rgba(255, 107, 107, 0.37);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.9);
+    --card-bg: rgba(255, 255, 255, 0.12);
+    --card-border: rgba(255, 255, 255, 0.18);
+    --accent-primary: #ff8c42;
+    --accent-secondary: #ff6b6b;
+    --timer-text: #ff8c42;
+    --timer-bg: rgba(255, 255, 255, 0.95);
+    --mode-badge-bg: rgba(255, 140, 66, 0.15);
+    --mode-badge-text: #ff8c42;
+    --info-label: rgba(255, 140, 66, 0.7);
+    --info-value: #ff8c42;
+    --input-bg: rgba(255, 255, 255, 0.9);
+    --input-border: rgba(255, 140, 66, 0.3);
+    --input-text: #333;
+    --float-object: rgba(255, 255, 255, 0.12);
+    --float-triangle: rgba(255, 255, 255, 0.1);
+    --progress-bg: rgba(255, 140, 66, 0.15);
+    --progress-bar: #ff8c42;
+    --btn-primary-bg: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+    --btn-secondary-bg: rgba(255, 140, 66, 0.2);
+    --btn-secondary-text: #ff8c42;
+}
+
+/* Rose Gold Theme */
+body.rosegold-theme {
+    --bg-gradient-start: #b76e79;
+    --bg-gradient-end: #e8a87c;
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --glass-shadow: rgba(183, 110, 121, 0.37);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.9);
+    --card-bg: rgba(255, 255, 255, 0.12);
+    --card-border: rgba(255, 255, 255, 0.18);
+    --accent-primary: #e8a87c;
+    --accent-secondary: #d4a574;
+    --timer-text: #e8a87c;
+    --timer-bg: rgba(255, 255, 255, 0.95);
+    --mode-badge-bg: rgba(232, 168, 124, 0.15);
+    --mode-badge-text: #e8a87c;
+    --info-label: rgba(232, 168, 124, 0.7);
+    --info-value: #e8a87c;
+    --input-bg: rgba(255, 255, 255, 0.9);
+    --input-border: rgba(232, 168, 124, 0.3);
+    --input-text: #333;
+    --float-object: rgba(255, 255, 255, 0.12);
+    --float-triangle: rgba(255, 255, 255, 0.1);
+    --progress-bg: rgba(232, 168, 124, 0.15);
+    --progress-bar: #e8a87c;
+    --btn-primary-bg: linear-gradient(135deg, #b76e79 0%, #e8a87c 100%);
+    --btn-secondary-bg: rgba(232, 168, 124, 0.2);
+    --btn-secondary-text: #e8a87c;
+}
+
+/* Midnight Theme */
+body.midnight-theme {
+    --bg-gradient-start: #0f0c29;
+    --bg-gradient-end: #302b63;
+    --glass-bg: rgba(48, 43, 99, 0.4);
+    --glass-border: rgba(138, 43, 226, 0.2);
+    --glass-shadow: rgba(0, 0, 0, 0.5);
+    --text-primary: #e0e0e0;
+    --text-secondary: rgba(224, 224, 224, 0.8);
+    --card-bg: rgba(48, 43, 99, 0.3);
+    --card-border: rgba(138, 43, 226, 0.15);
+    --accent-primary: #9d50bb;
+    --accent-secondary: #6e48aa;
+    --timer-text: #c77dff;
+    --timer-bg: rgba(48, 43, 99, 0.85);
+    --mode-badge-bg: rgba(157, 80, 187, 0.15);
+    --mode-badge-text: #c77dff;
+    --info-label: rgba(199, 125, 255, 0.6);
+    --info-value: #c77dff;
+    --input-bg: rgba(48, 43, 99, 0.6);
+    --input-border: rgba(157, 80, 187, 0.3);
+    --input-text: #e0e0e0;
+    --float-object: rgba(157, 80, 187, 0.08);
+    --float-triangle: rgba(157, 80, 187, 0.06);
+    --progress-bg: rgba(157, 80, 187, 0.15);
+    --progress-bar: #c77dff;
+    --btn-primary-bg: linear-gradient(135deg, #9d50bb 0%, #6e48aa 100%);
+    --btn-secondary-bg: rgba(157, 80, 187, 0.2);
+    --btn-secondary-text: #c77dff;
+}
+
+/* Lavender Theme */
+body.lavender-theme {
+    --bg-gradient-start: #a78bfa;
+    --bg-gradient-end: #ddd6fe;
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --glass-shadow: rgba(167, 139, 250, 0.37);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.9);
+    --card-bg: rgba(255, 255, 255, 0.12);
+    --card-border: rgba(255, 255, 255, 0.18);
+    --accent-primary: #c4b5fd;
+    --accent-secondary: #a78bfa;
+    --timer-text: #8b5cf6;
+    --timer-bg: rgba(255, 255, 255, 0.95);
+    --mode-badge-bg: rgba(139, 92, 246, 0.15);
+    --mode-badge-text: #8b5cf6;
+    --info-label: rgba(139, 92, 246, 0.7);
+    --info-value: #8b5cf6;
+    --input-bg: rgba(255, 255, 255, 0.9);
+    --input-border: rgba(139, 92, 246, 0.3);
+    --input-text: #333;
+    --float-object: rgba(255, 255, 255, 0.12);
+    --float-triangle: rgba(255, 255, 255, 0.1);
+    --progress-bg: rgba(139, 92, 246, 0.15);
+    --progress-bar: #8b5cf6;
+    --btn-primary-bg: linear-gradient(135deg, #a78bfa 0%, #c4b5fd 100%);
+    --btn-secondary-bg: rgba(139, 92, 246, 0.2);
+    --btn-secondary-text: #8b5cf6;
+}
+
+/* ===== RESET AND BASE STYLES ===== */
 * {
     margin: 0;
     padding: 0;
@@ -7,13 +256,69 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
+    transition: background 0.5s ease;
 }
 
-/* Floating background objects */
+/* ===== THEME SELECTOR ===== */
+.theme-selector-wrapper {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.theme-selector {
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px var(--glass-shadow);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 45px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+}
+
+.theme-selector:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 40px var(--glass-shadow);
+}
+
+.theme-selector:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+.theme-selector:focus {
+    border-color: var(--accent-primary);
+}
+
+.theme-selector option {
+    background: rgba(30, 30, 46, 0.95);
+    color: white;
+    padding: 10px;
+    font-size: 0.95rem;
+}
+
+/* ===== FLOATING BACKGROUND OBJECTS ===== */
 .floating-objects {
     position: fixed;
     top: 0;
@@ -30,14 +335,18 @@ body {
 .float-triangle {
     position: absolute;
     opacity: 0;
-    filter: blur(1px);
+    filter: blur(2px);
+    transition: background 0.5s ease, border-bottom-color 0.5s ease;
 }
 
 /* Circle shapes */
 .float-circle {
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
+    background: var(--float-object);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px var(--glass-shadow);
 }
 
 .float-1 {
@@ -86,9 +395,12 @@ body {
 
 /* Rectangle shapes */
 .float-rectangle {
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
-    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
+    background: var(--float-object);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px var(--glass-shadow);
 }
 
 .float-4 {
@@ -124,8 +436,8 @@ body {
     height: 0;
     border-left: 40px solid transparent;
     border-right: 40px solid transparent;
-    border-bottom: 70px solid rgba(255, 255, 255, 0.08);
-    filter: blur(1px);
+    border-bottom: 70px solid var(--float-triangle);
+    filter: blur(2px);
 }
 
 .float-6 {
@@ -142,7 +454,7 @@ body {
     animation-delay: 0.6s, 0s;
 }
 
-/* Floating animations */
+/* ===== FLOATING ANIMATIONS ===== */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -214,7 +526,7 @@ body {
     }
 }
 
-/* Main container */
+/* ===== MAIN CONTAINER ===== */
 .container {
     position: relative;
     z-index: 10;
@@ -235,11 +547,11 @@ body {
     }
 }
 
-/* Main title animation */
+/* ===== MAIN TITLE ANIMATION ===== */
 .main-title {
     font-size: 4rem;
     font-weight: 700;
-    color: white;
+    color: var(--text-primary);
     text-align: center;
     margin-bottom: 10px;
     text-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
@@ -247,6 +559,7 @@ body {
     animation: glideFromAbove 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     animation-delay: 0.3s;
     letter-spacing: -1px;
+    transition: color 0.5s ease;
 }
 
 @keyframes glideFromAbove {
@@ -262,12 +575,13 @@ body {
 
 .subtitle {
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-secondary);
     text-align: center;
     margin-bottom: 50px;
     opacity: 0;
     animation: fadeInUp 1s ease-out forwards;
     animation-delay: 0.8s;
+    transition: color 0.5s ease;
 }
 
 @keyframes fadeInUp {
@@ -281,23 +595,25 @@ body {
     }
 }
 
-/* Timer card */
+/* ===== TIMER CARD (GLASSY DESIGN) ===== */
 .timer-card {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    border-radius: 30px;
+    background: var(--card-bg);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-radius: 40px;
     padding: 50px 40px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 8px 32px var(--glass-shadow);
     position: relative;
     opacity: 0;
     animation: floatIn 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
     animation-delay: 1s;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .timer-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 12px 48px var(--glass-shadow);
 }
 
 @keyframes floatIn {
@@ -311,21 +627,25 @@ body {
     }
 }
 
-/* Mode indicator */
+/* ===== MODE INDICATOR ===== */
 .mode-indicator {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .mode-text {
     display: inline-block;
     font-size: 1.5rem;
     font-weight: 600;
-    color: #667eea;
-    padding: 10px 30px;
-    background: rgba(102, 126, 234, 0.1);
+    color: var(--mode-badge-text);
+    padding: 12px 35px;
+    background: var(--mode-badge-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 50px;
+    border: 1px solid var(--glass-border);
     animation: pulse 2s ease-in-out infinite;
+    transition: all 0.5s ease;
 }
 
 @keyframes pulse {
@@ -337,21 +657,27 @@ body {
     }
 }
 
-/* Timer display */
+/* ===== TIMER DISPLAY WITH FIXED ALIGNMENT ===== */
 .timer-display {
     position: relative;
     text-align: center;
-    margin: 50px 0;
-    z-index: 2;
+    margin: 60px 0;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .time-value {
     font-size: 5rem;
     font-weight: 700;
-    color: #667eea;
-    text-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+    color: var(--timer-text);
+    text-shadow: 0 4px 20px var(--glass-shadow);
     display: inline-block;
     animation: breathe 3s ease-in-out infinite;
+    position: relative;
+    z-index: 3;
+    transition: color 0.5s ease;
 }
 
 @keyframes breathe {
@@ -363,14 +689,13 @@ body {
     }
 }
 
-/* Progress ring */
+/* ===== PROGRESS RING (FIXED ALIGNMENT) ===== */
 .progress-ring {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
-    margin-top: 20px;
+    z-index: 2;
 }
 
 .progress-svg {
@@ -379,21 +704,23 @@ body {
 
 .progress-bg {
     fill: none;
-    stroke: rgba(102, 126, 234, 0.1);
+    stroke: var(--progress-bg);
     stroke-width: 8;
+    transition: stroke 0.5s ease;
 }
 
 .progress-bar {
     fill: none;
-    stroke: #667eea;
+    stroke: var(--progress-bar);
     stroke-width: 8;
     stroke-linecap: round;
     stroke-dasharray: 817;
     stroke-dashoffset: 817;
-    transition: stroke-dashoffset 0.3s ease;
+    transition: stroke-dashoffset 0.3s ease, stroke 0.5s ease;
+    filter: drop-shadow(0 0 10px var(--progress-bar));
 }
 
-/* Timer controls */
+/* ===== TIMER CONTROLS ===== */
 .timer-controls {
     display: flex;
     justify-content: center;
@@ -415,6 +742,7 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
+    border: 1px solid var(--glass-border);
 }
 
 .btn::before {
@@ -445,13 +773,16 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--btn-primary-bg);
     color: white;
 }
 
 .btn-secondary {
-    background: rgba(102, 126, 234, 0.2);
-    color: #667eea;
+    background: var(--btn-secondary-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--btn-secondary-text);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.5s ease, color 0.5s ease;
 }
 
 .btn:disabled {
@@ -475,13 +806,14 @@ body {
     z-index: 1;
 }
 
-/* Session info */
+/* ===== SESSION INFO ===== */
 .session-info {
     display: flex;
     justify-content: space-around;
     margin-top: 40px;
     padding-top: 30px;
-    border-top: 2px solid rgba(102, 126, 234, 0.2);
+    border-top: 2px solid var(--glass-border);
+    transition: border-color 0.5s ease;
 }
 
 .info-item {
@@ -496,18 +828,20 @@ body {
 .info-label {
     display: block;
     font-size: 0.9rem;
-    color: #888;
+    color: var(--info-label);
     margin-bottom: 8px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: color 0.5s ease;
 }
 
 .info-value {
     display: block;
     font-size: 2rem;
     font-weight: 700;
-    color: #667eea;
+    color: var(--info-value);
     animation: bounce 2s ease-in-out infinite;
+    transition: color 0.5s ease;
 }
 
 @keyframes bounce {
@@ -519,22 +853,25 @@ body {
     }
 }
 
-/* Settings panel */
+/* ===== SETTINGS PANEL (GLASSY) ===== */
 .settings-panel {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    border-radius: 30px;
+    background: var(--card-bg);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-radius: 40px;
     padding: 40px;
     margin-top: 30px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 8px 32px var(--glass-shadow);
     opacity: 0;
     animation: slideInFromLeft 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
     animation-delay: 1.3s;
-    transition: transform 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .settings-panel:hover {
     transform: translateX(5px);
+    box-shadow: 0 12px 48px var(--glass-shadow);
 }
 
 @keyframes slideInFromLeft {
@@ -550,9 +887,10 @@ body {
 
 .settings-title {
     font-size: 1.5rem;
-    color: #667eea;
+    color: var(--mode-badge-text);
     margin-bottom: 25px;
     text-align: center;
+    transition: color 0.5s ease;
 }
 
 .settings-grid {
@@ -569,46 +907,51 @@ body {
 
 .setting-item label {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--info-label);
     font-weight: 600;
+    transition: color 0.5s ease;
 }
 
 .setting-item input {
     padding: 12px 20px;
-    border: 2px solid rgba(102, 126, 234, 0.3);
+    border: 2px solid var(--input-border);
     border-radius: 15px;
     font-size: 1.1rem;
     transition: all 0.3s ease;
-    background: white;
+    background: var(--input-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--input-text);
 }
 
 .setting-item input:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: var(--accent-primary);
     transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+    box-shadow: 0 4px 15px var(--glass-shadow);
 }
 
 .setting-item input:hover {
-    border-color: #667eea;
+    border-color: var(--accent-primary);
 }
 
-/* Footer */
+/* ===== FOOTER ===== */
 .footer {
     text-align: center;
     margin-top: 40px;
     padding: 20px;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-secondary);
     opacity: 0;
     animation: fadeIn 1s ease-out forwards;
     animation-delay: 1.6s;
+    transition: color 0.5s ease;
 }
 
 .footer p {
     font-size: 0.95rem;
 }
 
-/* Responsive design */
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
     .main-title {
         font-size: 2.5rem;
@@ -620,6 +963,20 @@ body {
 
     .time-value {
         font-size: 3.5rem;
+    }
+
+    .timer-display {
+        height: 220px;
+    }
+
+    .progress-ring svg {
+        width: 220px;
+        height: 220px;
+    }
+
+    .progress-bg,
+    .progress-bar {
+        r: 100;
     }
 
     .timer-controls {
@@ -635,11 +992,21 @@ body {
     .settings-grid {
         grid-template-columns: 1fr;
     }
+
+    .theme-selector-wrapper {
+        top: 20px;
+        right: 20px;
+    }
+
+    .theme-selector {
+        font-size: 0.85rem;
+        padding: 10px 35px 10px 15px;
+    }
 }
 
-/* Additional smooth transitions for dynamic elements */
+/* ===== SMOOTH TRANSITIONS FOR THEME SWITCHING ===== */
 * {
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: background 0.5s ease, color 0.5s ease, border-color 0.5s ease;
 }
 
 input, button, .timer-card, .settings-panel {
